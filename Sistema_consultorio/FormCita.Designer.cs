@@ -33,14 +33,16 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardarCita = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtIdPaciente = new System.Windows.Forms.TextBox();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txtTipo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtTotalPagar = new System.Windows.Forms.TextBox();
             this.txtPaciente = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,7 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboHorario = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,17 +101,20 @@
             this.btnGuardarCita.TabIndex = 177;
             this.btnGuardarCita.Text = "GUARDAR";
             this.btnGuardarCita.UseVisualStyleBackColor = true;
+            this.btnGuardarCita.Click += new System.EventHandler(this.btnGuardarCita_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtIdPaciente);
+            this.groupBox2.Controls.Add(this.txtObservaciones);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.txtTipo);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtCedula);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtID);
-            this.groupBox2.Controls.Add(this.txtTelefono);
+            this.groupBox2.Controls.Add(this.txtTotalPagar);
             this.groupBox2.Controls.Add(this.txtPaciente);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label5);
@@ -121,13 +126,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATOS CITAS";
             // 
-            // textBox1
+            // label7
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 191);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(683, 99);
-            this.textBox1.TabIndex = 175;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(33, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 20);
+            this.label7.TabIndex = 184;
+            this.label7.Text = "ID Paciente:";
+            // 
+            // txtIdPaciente
+            // 
+            this.txtIdPaciente.Location = new System.Drawing.Point(155, 87);
+            this.txtIdPaciente.Multiline = true;
+            this.txtIdPaciente.Name = "txtIdPaciente";
+            this.txtIdPaciente.Size = new System.Drawing.Size(129, 28);
+            this.txtIdPaciente.TabIndex = 183;
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Location = new System.Drawing.Point(26, 191);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(683, 99);
+            this.txtObservaciones.TabIndex = 175;
             // 
             // label6
             // 
@@ -139,19 +162,20 @@
             this.label6.Text = "Observaciones:";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // comboBox3
+            // txtTipo
             // 
-            this.comboBox3.AutoCompleteCustomSource.AddRange(new string[] {
+            this.txtTipo.AutoCompleteCustomSource.AddRange(new string[] {
             "Mañana ",
             "Tarde"});
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.txtTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtTipo.FormattingEnabled = true;
+            this.txtTipo.Items.AddRange(new object[] {
             "Muestra de resultados"});
-            this.comboBox3.Location = new System.Drawing.Point(487, 94);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(223, 21);
-            this.comboBox3.TabIndex = 182;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.txtTipo.Location = new System.Drawing.Point(487, 94);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(223, 21);
+            this.txtTipo.TabIndex = 182;
+            this.txtTipo.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -170,12 +194,13 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(129, 28);
             this.txtCedula.TabIndex = 180;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(26, 37);
+            this.label12.Location = new System.Drawing.Point(33, 37);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 20);
             this.label12.TabIndex = 170;
@@ -183,28 +208,32 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(127, 37);
+            this.txtID.Location = new System.Drawing.Point(65, 37);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(129, 28);
+            this.txtID.Size = new System.Drawing.Size(75, 28);
             this.txtID.TabIndex = 169;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
-            // txtTelefono
+            // txtTotalPagar
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(487, 136);
-            this.txtTelefono.Multiline = true;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(130, 28);
-            this.txtTelefono.TabIndex = 176;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtTotalPagar.Location = new System.Drawing.Point(487, 136);
+            this.txtTotalPagar.Multiline = true;
+            this.txtTotalPagar.Name = "txtTotalPagar";
+            this.txtTotalPagar.Size = new System.Drawing.Size(130, 28);
+            this.txtTotalPagar.TabIndex = 176;
+            this.txtTotalPagar.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtTotalPagar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtPaciente
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(127, 84);
+            this.txtPaciente.Location = new System.Drawing.Point(155, 129);
             this.txtPaciente.Multiline = true;
             this.txtPaciente.Name = "txtPaciente";
-            this.txtPaciente.Size = new System.Drawing.Size(218, 28);
+            this.txtPaciente.Size = new System.Drawing.Size(200, 28);
             this.txtPaciente.TabIndex = 174;
+            this.txtPaciente.TextChanged += new System.EventHandler(this.txtPaciente_TextChanged);
+            this.txtPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaciente_KeyPress);
             // 
             // label10
             // 
@@ -231,7 +260,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 88);
+            this.label3.Location = new System.Drawing.Point(33, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 165;
@@ -242,7 +271,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboHorario);
             this.groupBox1.Location = new System.Drawing.Point(36, 388);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(859, 103);
@@ -275,19 +304,19 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 175;
             // 
-            // comboBox1
+            // cboHorario
             // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.cboHorario.AutoCompleteCustomSource.AddRange(new string[] {
             "Mañana ",
             "Tarde"});
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboHorario.FormattingEnabled = true;
+            this.cboHorario.Items.AddRange(new object[] {
             "Tarde ",
             "Mañana"});
-            this.comboBox1.Location = new System.Drawing.Point(163, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 174;
+            this.cboHorario.Location = new System.Drawing.Point(163, 49);
+            this.cboHorario.Name = "cboHorario";
+            this.cboHorario.Size = new System.Drawing.Size(121, 21);
+            this.cboHorario.TabIndex = 174;
             // 
             // label13
             // 
@@ -329,24 +358,26 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtTotalPagar;
         private System.Windows.Forms.TextBox txtPaciente;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox txtTipo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cboHorario;
+        private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnGuardarCita;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtIdPaciente;
     }
 }

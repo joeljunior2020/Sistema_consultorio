@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,12 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\BD.cs" />
     <Compile Include="conexion.cs" />
     <Compile Include="ConsultasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ConsultasDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatosGlobales.cs" />
     <Compile Include="Especialidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,9 +127,11 @@
     <Compile Include="FormSecretaria.Designer.cs">
       <DependentUpon>FormSecretaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Limpiar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\Web\HttpContext.cs" />
+    <Compile Include="Validacion.cs" />
     <EmbeddedResource Include="Especialidades.resx">
       <DependentUpon>Especialidades.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +315,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Imaglllllen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconoPacinete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CITA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\citas2222.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consultassssss.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medico.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajustes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\secretaria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muestras medicas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

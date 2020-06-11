@@ -34,6 +34,9 @@
             this.button8 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.checkEstado = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +45,6 @@
             this.txtAseguradora = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -66,6 +68,7 @@
             this.button4.Size = new System.Drawing.Size(57, 40);
             this.button4.TabIndex = 180;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button7
             // 
@@ -77,6 +80,7 @@
             this.button7.TabIndex = 203;
             this.button7.Text = "LIMPIAR";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -88,18 +92,24 @@
             this.button8.TabIndex = 204;
             this.button8.Text = "GUARDAR";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(32, 296);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(941, 295);
             this.dataGridView1.TabIndex = 176;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtDireccion);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txtDescripcion);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.checkEstado);
             this.groupBox2.Controls.Add(this.label1);
@@ -107,18 +117,44 @@
             this.groupBox2.Controls.Add(this.txtID);
             this.groupBox2.Controls.Add(this.txtAseguradora);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(32, 109);
+            this.groupBox2.Location = new System.Drawing.Point(32, 91);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(941, 181);
+            this.groupBox2.Size = new System.Drawing.Size(941, 199);
             this.groupBox2.TabIndex = 181;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DATOS ";
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(421, 155);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(486, 28);
+            this.txtDireccion.TabIndex = 191;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(417, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 20);
+            this.label2.TabIndex = 190;
+            this.label2.Text = "Direccion:";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(421, 41);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(486, 70);
+            this.txtDescripcion.TabIndex = 189;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(81, 125);
+            this.label4.Location = new System.Drawing.Point(57, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 188;
@@ -127,7 +163,7 @@
             // checkEstado
             // 
             this.checkEstado.AutoSize = true;
-            this.checkEstado.Location = new System.Drawing.Point(165, 131);
+            this.checkEstado.Location = new System.Drawing.Point(61, 169);
             this.checkEstado.Name = "checkEstado";
             this.checkEstado.Size = new System.Drawing.Size(15, 14);
             this.checkEstado.TabIndex = 187;
@@ -137,7 +173,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(429, 28);
+            this.label1.Location = new System.Drawing.Point(417, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 20);
             this.label1.TabIndex = 175;
@@ -147,7 +183,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(81, 43);
+            this.label12.Location = new System.Drawing.Point(57, 18);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 20);
             this.label12.TabIndex = 170;
@@ -155,25 +191,27 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(165, 45);
+            this.txtID.Location = new System.Drawing.Point(61, 41);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(129, 28);
             this.txtID.TabIndex = 169;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtAseguradora
             // 
-            this.txtAseguradora.Location = new System.Drawing.Point(165, 87);
+            this.txtAseguradora.Location = new System.Drawing.Point(61, 103);
             this.txtAseguradora.Multiline = true;
             this.txtAseguradora.Name = "txtAseguradora";
             this.txtAseguradora.Size = new System.Drawing.Size(218, 28);
             this.txtAseguradora.TabIndex = 174;
+            this.txtAseguradora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAseguradora_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 85);
+            this.label3.Location = new System.Drawing.Point(57, 72);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 165;
@@ -191,14 +229,6 @@
             this.label13.Text = "ASEGURADORA";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(433, 51);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(486, 110);
-            this.textBox1.TabIndex = 189;
-            // 
             // FormAseguradora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +241,7 @@
             this.Controls.Add(this.label13);
             this.Name = "FormAseguradora";
             this.Text = "FormAseguradora";
+            this.Load += new System.EventHandler(this.FormAseguradora_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -236,6 +267,8 @@
         private System.Windows.Forms.TextBox txtAseguradora;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Label label2;
     }
 }

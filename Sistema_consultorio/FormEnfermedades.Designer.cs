@@ -88,6 +88,7 @@
             // 
             // cboTipoEnfermedad
             // 
+            this.cboTipoEnfermedad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoEnfermedad.FormattingEnabled = true;
             this.cboTipoEnfermedad.Location = new System.Drawing.Point(168, 176);
             this.cboTipoEnfermedad.Name = "cboTipoEnfermedad";
@@ -110,9 +111,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(19, 81);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 20);
+            this.label12.Size = new System.Drawing.Size(26, 20);
             this.label12.TabIndex = 170;
-            this.label12.Text = "Código";
+            this.label12.Text = "ID";
             // 
             // txtID
             // 
@@ -121,6 +122,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(129, 28);
             this.txtID.TabIndex = 169;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtEnfermedad
             // 
@@ -129,6 +131,7 @@
             this.txtEnfermedad.Name = "txtEnfermedad";
             this.txtEnfermedad.Size = new System.Drawing.Size(218, 28);
             this.txtEnfermedad.TabIndex = 174;
+            this.txtEnfermedad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEnfermedad_KeyPress);
             // 
             // label3
             // 
@@ -168,6 +171,7 @@
             this.button4.Size = new System.Drawing.Size(57, 40);
             this.button4.TabIndex = 180;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button7
             // 
@@ -190,6 +194,7 @@
             this.button8.TabIndex = 204;
             this.button8.Text = "GUARDAR";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // groupBox1
             // 
@@ -202,9 +207,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(10, 19);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(513, 275);
             this.dataGridView1.TabIndex = 176;
             // 

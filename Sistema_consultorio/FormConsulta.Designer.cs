@@ -32,13 +32,13 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtEstatura = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.txtSintomasSubjetivos = new System.Windows.Forms.TextBox();
+            this.txtTratamiento = new System.Windows.Forms.TextBox();
+            this.txtExploracionConsulta = new System.Windows.Forms.TextBox();
+            this.txtDiagnostico = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -68,27 +68,34 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.btnVerHistorial = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
+            this.txtOtros = new System.Windows.Forms.TextBox();
+            this.cboEnfermedad = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtAnteQuirurgicos = new System.Windows.Forms.TextBox();
+            this.txtAnteFamiliares = new System.Windows.Forms.TextBox();
+            this.txtAnteCronicos = new System.Windows.Forms.TextBox();
+            this.btnVerHistorial = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.txtAlergias = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.btnGuardarHistorial = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.btnImprimirEstudios = new System.Windows.Forms.Button();
+            this.txtSolicitudEstudios = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtIDConsulta = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkEstado = new System.Windows.Forms.CheckBox();
+            this.dgvBuscarPaciente = new System.Windows.Forms.DataGridView();
+            this.txtID_Paciente = new System.Windows.Forms.TextBox();
+            this.txtBuscarCedula = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtNOmbre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -96,12 +103,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtBuscarCedula = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnHistorialConsultas = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnNuevoMedico = new System.Windows.Forms.Button();
-            this.dgvBuscarPaciente = new System.Windows.Forms.DataGridView();
+            this.btnTerminarConsulta = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -128,10 +132,10 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.txtSintomasSubjetivos);
+            this.tabPage1.Controls.Add(this.txtTratamiento);
+            this.tabPage1.Controls.Add(this.txtExploracionConsulta);
+            this.tabPage1.Controls.Add(this.txtDiagnostico);
             this.tabPage1.Controls.Add(this.label32);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label14);
@@ -149,9 +153,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Controls.Add(this.txtEstatura);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBox10);
+            this.groupBox3.Controls.Add(this.txtPeso);
             this.groupBox3.Location = new System.Drawing.Point(13, 34);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(166, 287);
@@ -167,12 +171,12 @@
             this.label17.TabIndex = 32;
             this.label17.Text = "Estatua";
             // 
-            // textBox11
+            // txtEstatura
             // 
-            this.textBox11.Location = new System.Drawing.Point(9, 115);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 31;
+            this.txtEstatura.Location = new System.Drawing.Point(9, 115);
+            this.txtEstatura.Name = "txtEstatura";
+            this.txtEstatura.Size = new System.Drawing.Size(100, 20);
+            this.txtEstatura.TabIndex = 31;
             // 
             // label4
             // 
@@ -183,44 +187,44 @@
             this.label4.TabIndex = 30;
             this.label4.Text = "Peso";
             // 
-            // textBox10
+            // txtPeso
             // 
-            this.textBox10.Location = new System.Drawing.Point(9, 47);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 29;
+            this.txtPeso.Location = new System.Drawing.Point(9, 47);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(100, 20);
+            this.txtPeso.TabIndex = 29;
             // 
-            // textBox4
+            // txtSintomasSubjetivos
             // 
-            this.textBox4.Location = new System.Drawing.Point(800, 42);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(273, 121);
-            this.textBox4.TabIndex = 28;
+            this.txtSintomasSubjetivos.Location = new System.Drawing.Point(800, 42);
+            this.txtSintomasSubjetivos.Multiline = true;
+            this.txtSintomasSubjetivos.Name = "txtSintomasSubjetivos";
+            this.txtSintomasSubjetivos.Size = new System.Drawing.Size(273, 121);
+            this.txtSintomasSubjetivos.TabIndex = 28;
             // 
-            // textBox3
+            // txtTratamiento
             // 
-            this.textBox3.Location = new System.Drawing.Point(494, 200);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(579, 121);
-            this.textBox3.TabIndex = 27;
+            this.txtTratamiento.Location = new System.Drawing.Point(494, 200);
+            this.txtTratamiento.Multiline = true;
+            this.txtTratamiento.Name = "txtTratamiento";
+            this.txtTratamiento.Size = new System.Drawing.Size(579, 121);
+            this.txtTratamiento.TabIndex = 27;
             // 
-            // textBox2
+            // txtExploracionConsulta
             // 
-            this.textBox2.Location = new System.Drawing.Point(494, 42);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(273, 121);
-            this.textBox2.TabIndex = 26;
+            this.txtExploracionConsulta.Location = new System.Drawing.Point(494, 42);
+            this.txtExploracionConsulta.Multiline = true;
+            this.txtExploracionConsulta.Name = "txtExploracionConsulta";
+            this.txtExploracionConsulta.Size = new System.Drawing.Size(273, 121);
+            this.txtExploracionConsulta.TabIndex = 26;
             // 
-            // textBox1
+            // txtDiagnostico
             // 
-            this.textBox1.Location = new System.Drawing.Point(195, 200);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 121);
-            this.textBox1.TabIndex = 25;
+            this.txtDiagnostico.Location = new System.Drawing.Point(195, 200);
+            this.txtDiagnostico.Multiline = true;
+            this.txtDiagnostico.Name = "txtDiagnostico";
+            this.txtDiagnostico.Size = new System.Drawing.Size(273, 121);
+            this.txtDiagnostico.TabIndex = 25;
             // 
             // label32
             // 
@@ -300,6 +304,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Recetas";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // btnNuevaCita
             // 
@@ -375,6 +380,7 @@
             // 
             // dgvRECETA
             // 
+            this.dgvRECETA.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvRECETA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRECETA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero,
@@ -485,19 +491,19 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.textBox8);
-            this.tabPage3.Controls.Add(this.textBox9);
-            this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.textBox7);
-            this.tabPage3.Controls.Add(this.btnVerHistorial);
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.label30);
+            this.tabPage3.Controls.Add(this.txtOtros);
+            this.tabPage3.Controls.Add(this.cboEnfermedad);
             this.tabPage3.Controls.Add(this.label29);
+            this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.txtAnteQuirurgicos);
+            this.tabPage3.Controls.Add(this.txtAnteFamiliares);
+            this.tabPage3.Controls.Add(this.txtAnteCronicos);
+            this.tabPage3.Controls.Add(this.btnVerHistorial);
+            this.tabPage3.Controls.Add(this.label30);
             this.tabPage3.Controls.Add(this.label25);
             this.tabPage3.Controls.Add(this.label31);
             this.tabPage3.Controls.Add(this.txtAlergias);
             this.tabPage3.Controls.Add(this.label28);
-            this.tabPage3.Controls.Add(this.label26);
             this.tabPage3.Controls.Add(this.label27);
             this.tabPage3.Controls.Add(this.btnGuardarHistorial);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -507,37 +513,65 @@
             this.tabPage3.Text = "Historia  Clínica ";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // txtOtros
             // 
-            this.textBox8.Location = new System.Drawing.Point(731, 199);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(323, 71);
-            this.textBox8.TabIndex = 201;
+            this.txtOtros.Location = new System.Drawing.Point(12, 199);
+            this.txtOtros.Multiline = true;
+            this.txtOtros.Name = "txtOtros";
+            this.txtOtros.Size = new System.Drawing.Size(323, 71);
+            this.txtOtros.TabIndex = 203;
             // 
-            // textBox9
+            // cboEnfermedad
             // 
-            this.textBox9.Location = new System.Drawing.Point(731, 66);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(323, 71);
-            this.textBox9.TabIndex = 200;
+            this.cboEnfermedad.FormattingEnabled = true;
+            this.cboEnfermedad.Location = new System.Drawing.Point(731, 200);
+            this.cboEnfermedad.Name = "cboEnfermedad";
+            this.cboEnfermedad.Size = new System.Drawing.Size(323, 21);
+            this.cboEnfermedad.TabIndex = 202;
             // 
-            // textBox6
+            // label29
             // 
-            this.textBox6.Location = new System.Drawing.Point(374, 199);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(323, 71);
-            this.textBox6.TabIndex = 199;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(13, 176);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(286, 20);
+            this.label29.TabIndex = 202;
+            this.label29.Text = "Otros (medicamentos, traumatismos...):";
             // 
-            // textBox7
+            // label21
             // 
-            this.textBox7.Location = new System.Drawing.Point(374, 66);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(323, 71);
-            this.textBox7.TabIndex = 198;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(732, 176);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(114, 20);
+            this.label21.TabIndex = 201;
+            this.label21.Text = "Enfermedades";
+            // 
+            // txtAnteQuirurgicos
+            // 
+            this.txtAnteQuirurgicos.Location = new System.Drawing.Point(731, 66);
+            this.txtAnteQuirurgicos.Multiline = true;
+            this.txtAnteQuirurgicos.Name = "txtAnteQuirurgicos";
+            this.txtAnteQuirurgicos.Size = new System.Drawing.Size(323, 71);
+            this.txtAnteQuirurgicos.TabIndex = 200;
+            // 
+            // txtAnteFamiliares
+            // 
+            this.txtAnteFamiliares.Location = new System.Drawing.Point(374, 199);
+            this.txtAnteFamiliares.Multiline = true;
+            this.txtAnteFamiliares.Name = "txtAnteFamiliares";
+            this.txtAnteFamiliares.Size = new System.Drawing.Size(323, 71);
+            this.txtAnteFamiliares.TabIndex = 199;
+            // 
+            // txtAnteCronicos
+            // 
+            this.txtAnteCronicos.Location = new System.Drawing.Point(374, 66);
+            this.txtAnteCronicos.Multiline = true;
+            this.txtAnteCronicos.Name = "txtAnteCronicos";
+            this.txtAnteCronicos.Size = new System.Drawing.Size(323, 71);
+            this.txtAnteCronicos.TabIndex = 198;
             // 
             // btnVerHistorial
             // 
@@ -550,14 +584,6 @@
             this.btnVerHistorial.Text = "Historial Clínico";
             this.btnVerHistorial.UseVisualStyleBackColor = true;
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(17, 199);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(323, 71);
-            this.textBox5.TabIndex = 197;
-            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -567,16 +593,6 @@
             this.label30.Size = new System.Drawing.Size(189, 20);
             this.label30.TabIndex = 34;
             this.label30.Text = "Antecedentes Familiares:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(732, 176);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(286, 20);
-            this.label29.TabIndex = 35;
-            this.label29.Text = "Otros (medicamentos, traumatismos...):";
             // 
             // label25
             // 
@@ -616,16 +632,6 @@
             this.label28.TabIndex = 32;
             this.label28.Text = "Alergias:";
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(18, 176);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(217, 20);
-            this.label26.TabIndex = 34;
-            this.label26.Text = "Antecedentes Ginecológicos:";
-            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -646,11 +652,12 @@
             this.btnGuardarHistorial.TabIndex = 196;
             this.btnGuardarHistorial.Text = "GUARDAR HISTORIAL";
             this.btnGuardarHistorial.UseVisualStyleBackColor = true;
+            this.btnGuardarHistorial.Click += new System.EventHandler(this.btnGuardarHistorial_Click_1);
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button3);
-            this.tabPage4.Controls.Add(this.textBox17);
+            this.tabPage4.Controls.Add(this.btnImprimirEstudios);
+            this.tabPage4.Controls.Add(this.txtSolicitudEstudios);
             this.tabPage4.Controls.Add(this.label24);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -659,23 +666,23 @@
             this.tabPage4.Text = "Exámenes/Estudios";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnImprimirEstudios
             // 
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(93, 277);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(191, 48);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Imprimir Solicitud";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnImprimirEstudios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimirEstudios.Location = new System.Drawing.Point(93, 277);
+            this.btnImprimirEstudios.Name = "btnImprimirEstudios";
+            this.btnImprimirEstudios.Size = new System.Drawing.Size(191, 48);
+            this.btnImprimirEstudios.TabIndex = 13;
+            this.btnImprimirEstudios.Text = "Imprimir Solicitud";
+            this.btnImprimirEstudios.UseVisualStyleBackColor = true;
             // 
-            // textBox17
+            // txtSolicitudEstudios
             // 
-            this.textBox17.Location = new System.Drawing.Point(93, 75);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(738, 196);
-            this.textBox17.TabIndex = 12;
+            this.txtSolicitudEstudios.Location = new System.Drawing.Point(93, 75);
+            this.txtSolicitudEstudios.Multiline = true;
+            this.txtSolicitudEstudios.Name = "txtSolicitudEstudios";
+            this.txtSolicitudEstudios.Size = new System.Drawing.Size(738, 196);
+            this.txtSolicitudEstudios.TabIndex = 12;
             // 
             // label24
             // 
@@ -689,40 +696,113 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtIDConsulta);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.checkEstado);
             this.groupBox1.Controls.Add(this.dgvBuscarPaciente);
-            this.groupBox1.Controls.Add(this.txtID);
+            this.groupBox1.Controls.Add(this.txtID_Paciente);
             this.groupBox1.Controls.Add(this.txtBuscarCedula);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtNOmbre);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(19, 83);
+            this.groupBox1.Location = new System.Drawing.Point(19, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1089, 161);
+            this.groupBox1.Size = new System.Drawing.Size(1089, 194);
             this.groupBox1.TabIndex = 117;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS DEL PACIENTE";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // txtID
+            // txtIDConsulta
             // 
-            this.txtID.Location = new System.Drawing.Point(101, 31);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(89, 20);
-            this.txtID.TabIndex = 29;
+            this.txtIDConsulta.Location = new System.Drawing.Point(101, 38);
+            this.txtIDConsulta.Name = "txtIDConsulta";
+            this.txtIDConsulta.Size = new System.Drawing.Size(89, 20);
+            this.txtIDConsulta.TabIndex = 199;
+            this.txtIDConsulta.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(18, 38);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(76, 16);
+            this.label20.TabIndex = 198;
+            this.label20.Text = "ID Consulta";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 159);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.TabIndex = 197;
+            this.label1.Text = "Estado:";
+            // 
+            // checkEstado
+            // 
+            this.checkEstado.AutoSize = true;
+            this.checkEstado.Location = new System.Drawing.Point(101, 165);
+            this.checkEstado.Name = "checkEstado";
+            this.checkEstado.Size = new System.Drawing.Size(15, 14);
+            this.checkEstado.TabIndex = 196;
+            this.checkEstado.UseVisualStyleBackColor = true;
+            // 
+            // dgvBuscarPaciente
+            // 
+            this.dgvBuscarPaciente.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvBuscarPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBuscarPaciente.Location = new System.Drawing.Point(327, 52);
+            this.dgvBuscarPaciente.Name = "dgvBuscarPaciente";
+            this.dgvBuscarPaciente.ReadOnly = true;
+            this.dgvBuscarPaciente.Size = new System.Drawing.Size(733, 136);
+            this.dgvBuscarPaciente.TabIndex = 196;
+            // 
+            // txtID_Paciente
+            // 
+            this.txtID_Paciente.Location = new System.Drawing.Point(101, 64);
+            this.txtID_Paciente.Name = "txtID_Paciente";
+            this.txtID_Paciente.Size = new System.Drawing.Size(89, 20);
+            this.txtID_Paciente.TabIndex = 29;
+            this.txtID_Paciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
+            // 
+            // txtBuscarCedula
+            // 
+            this.txtBuscarCedula.Location = new System.Drawing.Point(101, 123);
+            this.txtBuscarCedula.Name = "txtBuscarCedula";
+            this.txtBuscarCedula.Size = new System.Drawing.Size(154, 20);
+            this.txtBuscarCedula.TabIndex = 124;
+            this.txtBuscarCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarCedula_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(18, 127);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 16);
+            this.label7.TabIndex = 123;
+            this.label7.Text = "Cedula";
             // 
             // txtNOmbre
             // 
-            this.txtNOmbre.Location = new System.Drawing.Point(101, 64);
+            this.txtNOmbre.Location = new System.Drawing.Point(101, 97);
             this.txtNOmbre.Name = "txtNOmbre";
             this.txtNOmbre.Size = new System.Drawing.Size(170, 20);
             this.txtNOmbre.TabIndex = 27;
+            this.txtNOmbre.TextChanged += new System.EventHandler(this.txtNOmbre_TextChanged);
+            this.txtNOmbre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNOmbre_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 64);
+            this.label3.Location = new System.Drawing.Point(18, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 20;
@@ -732,7 +812,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 31);
+            this.label2.Location = new System.Drawing.Point(18, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 19;
@@ -744,6 +824,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(82, 20);
             this.txtPrecio.TabIndex = 25;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // label5
             // 
@@ -772,32 +853,15 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(218, 20);
             this.dateTimePicker1.TabIndex = 119;
             // 
-            // button2
+            // btnHistorialConsultas
             // 
-            this.button2.Location = new System.Drawing.Point(635, 634);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 48);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Historial Consultas";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txtBuscarCedula
-            // 
-            this.txtBuscarCedula.Location = new System.Drawing.Point(101, 90);
-            this.txtBuscarCedula.Name = "txtBuscarCedula";
-            this.txtBuscarCedula.Size = new System.Drawing.Size(154, 20);
-            this.txtBuscarCedula.TabIndex = 124;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 94);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 16);
-            this.label7.TabIndex = 123;
-            this.label7.Text = "Cedula";
+            this.btnHistorialConsultas.Location = new System.Drawing.Point(668, 655);
+            this.btnHistorialConsultas.Name = "btnHistorialConsultas";
+            this.btnHistorialConsultas.Size = new System.Drawing.Size(175, 48);
+            this.btnHistorialConsultas.TabIndex = 31;
+            this.btnHistorialConsultas.Text = "Historial Consultas";
+            this.btnHistorialConsultas.UseVisualStyleBackColor = true;
+            this.btnHistorialConsultas.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -809,24 +873,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // btnNuevoMedico
+            // btnTerminarConsulta
             // 
-            this.btnNuevoMedico.Image = global::Sistema_consultorio.Properties.Resources.yucata2;
-            this.btnNuevoMedico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoMedico.Location = new System.Drawing.Point(29, 634);
-            this.btnNuevoMedico.Name = "btnNuevoMedico";
-            this.btnNuevoMedico.Size = new System.Drawing.Size(175, 48);
-            this.btnNuevoMedico.TabIndex = 193;
-            this.btnNuevoMedico.Text = "Terminar Consulta";
-            this.btnNuevoMedico.UseVisualStyleBackColor = true;
-            // 
-            // dgvBuscarPaciente
-            // 
-            this.dgvBuscarPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBuscarPaciente.Location = new System.Drawing.Point(327, 19);
-            this.dgvBuscarPaciente.Name = "dgvBuscarPaciente";
-            this.dgvBuscarPaciente.Size = new System.Drawing.Size(733, 136);
-            this.dgvBuscarPaciente.TabIndex = 196;
+            this.btnTerminarConsulta.Image = global::Sistema_consultorio.Properties.Resources.yucata2;
+            this.btnTerminarConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTerminarConsulta.Location = new System.Drawing.Point(29, 634);
+            this.btnTerminarConsulta.Name = "btnTerminarConsulta";
+            this.btnTerminarConsulta.Size = new System.Drawing.Size(175, 48);
+            this.btnTerminarConsulta.TabIndex = 193;
+            this.btnTerminarConsulta.Text = "Terminar Consulta";
+            this.btnTerminarConsulta.UseVisualStyleBackColor = true;
             // 
             // FormConsulta
             // 
@@ -835,8 +891,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1172, 838);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnNuevoMedico);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnTerminarConsulta);
+            this.Controls.Add(this.btnHistorialConsultas);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControl1);
@@ -897,19 +953,17 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtAlergias;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Button btnImprimirEstudios;
+        private System.Windows.Forms.TextBox txtSolicitudEstudios;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtID_Paciente;
         private System.Windows.Forms.TextBox txtNOmbre;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label5;
@@ -917,29 +971,35 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSintomasSubjetivos;
+        private System.Windows.Forms.TextBox txtTratamiento;
+        private System.Windows.Forms.TextBox txtExploracionConsulta;
+        private System.Windows.Forms.TextBox txtDiagnostico;
         private System.Windows.Forms.Button btnVerHistorial;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnNuevoMedico;
+        private System.Windows.Forms.Button btnHistorialConsultas;
+        private System.Windows.Forms.Button btnTerminarConsulta;
         private System.Windows.Forms.TextBox txtBuscarCedula;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuardarHistorial;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtAnteQuirurgicos;
+        private System.Windows.Forms.TextBox txtAnteFamiliares;
+        private System.Windows.Forms.TextBox txtAnteCronicos;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnNuevaCita;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtEstatura;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.DataGridView dgvBuscarPaciente;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkEstado;
+        private System.Windows.Forms.TextBox txtIDConsulta;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtOtros;
+        private System.Windows.Forms.ComboBox cboEnfermedad;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label21;
     }
 }

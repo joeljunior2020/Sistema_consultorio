@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Sistema_consultorio.ConsultasDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,17 +15,34 @@ namespace Sistema_consultorio
 {
     public partial class FormPrincipal : Form
     {
+
+
         public FormPrincipal()
         {
+
+          //string NOMBRE_USUARIO;
+          //  int ID_LICENCIA;
+
+          //  int ID_USUARIO;
+          //  string NOMBRE_PERSONA;
+          //  string TIPO_USUARIO;
+
             InitializeComponent();
             //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)
             this.SetStyle(ControlStyles.ResizeRedraw, true);
-            this.DoubleBuffered = true;
+            this.DoubleBuffered = true; 
+
+
         }
+   
+        /// //////////////////////////////P
+
+
+  
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-        
+           
         }
 
 
@@ -117,8 +136,23 @@ namespace Sistema_consultorio
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
+
+        
+
         private void button1_Click(object sender, EventArgs e)
         {
+            //FormPaciente PACIENTE = new FormPaciente();
+            //PACIENTE.txtIDLicencia.Text = lblLicencia.Text;
+            //PACIENTE.txtIDUsuario.Text = txtIdUsuario_Menu.Text;
+            //this.Hide();
+            //menu.Show();
+
+            DatosGlobales.ID_LICENCIA_GLOBAL = Convert.ToInt32(lblLicencia.Text);
+            DatosGlobales.ID_USUARIO_GLOBAL = Convert.ToInt32(txtIdUsuario_Menu.Text);
+
+
+
+
             AbrirFormulario<FormPaciente>(); //llamamos el metood para abrir el formulario
             button1.BackColor = Color.FromArgb(12, 61, 92); // para cambiar el color del boton cuando este clicked
 
@@ -205,6 +239,21 @@ namespace Sistema_consultorio
 
         }
 
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelBarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         #endregion
         // Metodo para abrir formularios dentro del panel
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
@@ -246,13 +295,17 @@ namespace Sistema_consultorio
                 btnConfiguracion.BackColor = Color.FromArgb(4, 41, 68);
             if (Application.OpenForms["FormMedico"] == null)      // para especificar el nombre del formulario
                 btnMedicos.BackColor = Color.FromArgb(4, 41, 68);
-            if (Application.OpenForms["FormSecretaria"] == null)      // para especificar el nombre del formulario
+            if (Application.OpenForms["FormSecretaria"] == null)      
                 btnSecretaria.BackColor = Color.FromArgb(4, 41, 68);
-
-
-
+            if (Application.OpenForms["FormMuestrasMedidas"] == null)      
+                btnMuestrasMedicas.BackColor = Color.FromArgb(4, 41, 68);
 
         }
+
+     
+
+
+
 
     }
 }
