@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
@@ -42,7 +43,7 @@ namespace Sistema_consultorio
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-           
+            TOTAL_PACIENTE_DASHBOARD();
         }
 
 
@@ -301,8 +302,45 @@ namespace Sistema_consultorio
                 btnMuestrasMedicas.BackColor = Color.FromArgb(4, 41, 68);
 
         }
+        ////////////////////////
+        #region DASHBOARD
+        string total_paciente = "";
 
-     
+      
+
+        public void TOTAL_PACIENTE_DASHBOARD()
+
+        {
+            SqlConnection con = new SqlConnection(Clases.BD.conexxxion);
+            using (SqlCommand cmd = new SqlCommand("TOTAL_PACIENTE_DASHBOARD", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID_LICENCIA", SqlDbType.Int).Value = DatosGlobales.ID_LICENCIA_GLOBAL;
+
+
+                SqlParameter paramentro = new SqlParameter("@ID_LICENCIA", SqlDbType.Int);
+                paramentro.Direction = ParameterDirection.ReturnValue;
+                cmd.Parameters.Add(paramentro);
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    total_paciente = reader.GetString(0);
+                   
+
+                }
+
+                con.Close();
+                LBL_TOTAL_PACIENTES.Text = total_paciente;
+            }
+
+        }
+        #endregion
+        /////////////////////
 
 
 

@@ -59,7 +59,8 @@ namespace Sistema_consultorio
 
         private void FormPaciente_Load(object sender, EventArgs e)
         {
-            Llenar_DataGridView();
+           
+            LLENAR_DATA_GRID_VIEW();  ///nuevo metodo quue solo trae los pacientes del consultorio determinado porla licencia
 
        int  cantidad  =  dataGridView1.Rows.Count - 1;
       Total_lb.Text = cantidad.ToString();
@@ -113,7 +114,7 @@ namespace Sistema_consultorio
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Llenar_DataGridView();
+                LLENAR_DATA_GRID_VIEW();
             }
         }
 
@@ -175,42 +176,7 @@ namespace Sistema_consultorio
         }
         /////////////////////////////////////////////////////////
 
-        private void Llenar_DataGridView()
-        {
-            //Los argumentos de conexion a la base de datos
-            string args = "Data Source=.;Initial Catalog=Consultas;Integrated Security=True";
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = args;
-
-            try
-            {
-                //Indico el SP que voy a utilizar
-                SqlCommand command = new SqlCommand("SELECCIONAR_DATOS_PACIENTES", conn);
-                command.CommandType = CommandType.StoredProcedure;
-
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-                ////Envió los parámetros que necesito
-                //SqlParameter param = new SqlParameter("@percentage", SqlDbType.Int);
-                //param.Value = 100;
-                //command.Parameters.Add(param);
-
-                DataTable dt = new DataTable();
-
-                conn.Open();
-
-                //Aquí ejecuto el SP y lo lleno en el DataTable
-                adapter.Fill(dt);
-
-                //Enlazo mis datos obtenidos en el DataTable con el grid
-                dataGridView1.DataSource = dt;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -290,6 +256,7 @@ namespace Sistema_consultorio
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@NOMBRE", SqlDbType.NVarChar).Value = txtNombre.Text;
+                cmd.Parameters.Add("@ID_LICENCIA ", SqlDbType.NVarChar).Value = DatosGlobales.ID_LICENCIA_GLOBAL;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
@@ -326,6 +293,8 @@ namespace Sistema_consultorio
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@Apellido", SqlDbType.NVarChar).Value = txtApellido.Text;
+                cmd.Parameters.Add("@ID_LICENCIA ", SqlDbType.NVarChar).Value = DatosGlobales.ID_LICENCIA_GLOBAL;
+
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
@@ -363,6 +332,7 @@ namespace Sistema_consultorio
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@ID", SqlDbType.NVarChar).Value = txtID.Text;
+                cmd.Parameters.Add("@ID_LICENCIA ", SqlDbType.NVarChar).Value = DatosGlobales.ID_LICENCIA_GLOBAL;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
@@ -399,6 +369,7 @@ namespace Sistema_consultorio
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@CEDULA", SqlDbType.NVarChar).Value = txtCedula.Text;
+                cmd.Parameters.Add("@ID_LICENCIA ", SqlDbType.NVarChar).Value = DatosGlobales.ID_LICENCIA_GLOBAL;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
@@ -456,5 +427,42 @@ namespace Sistema_consultorio
         {
 
         }
+
+        /// /////////////////////////////////////PRUEBA PRUEBA ///////////////////////////////
+      
+        private void LLENAR_DATA_GRID_VIEW()
+        {
+            SqlConnection con = new SqlConnection(Clases.BD.conexxxion);
+            using (SqlCommand cmd = new SqlCommand("SELECCIONAR_DATOS_PACIENTES_2", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID_LICENCIA", SqlDbType.NVarChar).Value = DatosGlobales.ID_LICENCIA_GLOBAL;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                con.Open();
+
+                //Aquí ejecuto el SP y lo lleno en el DataTable
+                adapter.Fill(dt);
+
+                //Enlazo mis datos obtenidos en el DataTable con el grid
+                dataGridView1.DataSource = dt;
+
+                int cantidad = dataGridView1.Rows.Count - 1;
+                Total_lb.Text = cantidad.ToString();
+
+                con.Close();
+
+                //MessageBox.Show("Bienvenido: " + txt_USUARIO.Text);
+            }
+        }
+
+       
+
+
+
+
+
     }
 }

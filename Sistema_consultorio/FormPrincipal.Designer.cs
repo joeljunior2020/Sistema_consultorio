@@ -53,7 +53,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.ssssss = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LBL_TOTAL_PACIENTES = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -276,7 +276,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 73);
             this.label10.TabIndex = 20;
-            this.label10.Text = "4";
+            this.label10.Text = "0";
             // 
             // pictureBox9
             // 
@@ -327,7 +327,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 73);
             this.label9.TabIndex = 19;
-            this.label9.Text = "9";
+            this.label9.Text = "0";
             // 
             // pictureBox6
             // 
@@ -371,23 +371,23 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
-            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.LBL_TOTAL_PACIENTES);
             this.panel4.Controls.Add(this.pictureBox7);
             this.panel4.Location = new System.Drawing.Point(65, 300);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(313, 152);
             this.panel4.TabIndex = 5;
             // 
-            // label5
+            // LBL_TOTAL_PACIENTES
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(161, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 73);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "23";
+            this.LBL_TOTAL_PACIENTES.AutoSize = true;
+            this.LBL_TOTAL_PACIENTES.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_TOTAL_PACIENTES.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LBL_TOTAL_PACIENTES.Location = new System.Drawing.Point(161, 24);
+            this.LBL_TOTAL_PACIENTES.Name = "LBL_TOTAL_PACIENTES";
+            this.LBL_TOTAL_PACIENTES.Size = new System.Drawing.Size(69, 73);
+            this.LBL_TOTAL_PACIENTES.TabIndex = 18;
+            this.LBL_TOTAL_PACIENTES.Text = "0";
             // 
             // pictureBox7
             // 
@@ -837,7 +837,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LBL_TOTAL_PACIENTES;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label6;
