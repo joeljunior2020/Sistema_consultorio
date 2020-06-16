@@ -55,6 +55,7 @@ namespace Sistema_consultorio
         private void button4_Click(object sender, EventArgs e)
         {
             guardar_pasiente();
+
         }
 
         private void FormPaciente_Load(object sender, EventArgs e)
